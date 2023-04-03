@@ -104,6 +104,7 @@ class ProfileActivity : AppCompatActivity() {
             .addOnSuccessListener {
                 val user = it.toObject(Users::class.java)
                 if (user != null) {
+                    binding.textUserLevel.text = "Level ${user.level}"
                     binding.editUserName.setText(user.username)
                     binding.editGender.setText(user.gender)
                     binding.editCity.setText(user.city)
